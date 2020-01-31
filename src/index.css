@@ -37,6 +37,7 @@ code {
 }
 
 .case,.goal {
+  position: relative;
   box-shadow: inset -11px -9px 0px 1px #ffb44b;
   width: min-content;
   overflow: hidden;
@@ -48,11 +49,10 @@ code {
   /* border-bottom-width: 4px; */
   font-family: "Montserrat", sans-serif;
   color: #ffb44a;
-  padding: 20px;
+  padding: 10px 20px 20px 10px;
 }
 .case{
   min-width: 200px;
-  display: flex;
     flex-direction: row;
     justify-content: flex-start;
 
@@ -119,7 +119,7 @@ a:focus {
   color: #ffb44a;
 }
 .container {
-  padding-top: 55px;
+  padding-top: 70px;
 }
 button {
   text-decoration: none;
@@ -210,3 +210,40 @@ input[type="text"] {
 margin-bottom: 0px;
 font-size: 30px;
 padding-bottom: 0px;}
+div{
+  cursor: default;
+}
+
+
+.delite-button{
+  position: absolute;
+  right: 15px;
+  left: auto;
+  top: 4px;
+}
+.delite-button:hover{
+  color: #ff5535;
+}
+.main-page-container{
+  background: #fff;
+  width: 90%;
+  margin: auto;
+  border: #ffb44a 4px solid;
+  color: #ffb44a;
+  padding: 20px;
+ text-align: center;
+}
+.img-container{
+
+  margin: 10px auto;
+border: #ffb44a 4px solid;
+  width: 300px;
+  height: 300px;
+  box-shadow: inset -11px -9px 0px 1px #ffb44b;
+}
+.img-container > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: inset -11px -9px 0px 1px #ffb44b;
+}

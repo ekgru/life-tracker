@@ -9,8 +9,8 @@ function App(props) {
     <Router>
       <div className='nav-bar'>
       <Link to="/">Главная</Link>
-      <Link to="/goals">Цели</Link>
-      <Link to="/cases">Задачи</Link>
+      <Link to="/goals">Трекер привычек</Link>
+      <Link to="/cases">Список дел</Link>
       </div>
       <div className='container'>
       <Switch>
@@ -18,10 +18,10 @@ function App(props) {
           <Home />
         </Route>
         <Route path="/goals" >
-          <GoalsColumn goalsList={props.appState.goals} />
+          <GoalsColumn  />
         </Route>
         <Route path="/cases">
-          <ToDoColumn casesList={props.appState.cases}/>
+          <ToDoColumn/>
         </Route>
         
       </Switch>

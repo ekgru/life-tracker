@@ -3,17 +3,17 @@ import React from "react";
 import Goal from "./Goal";
 
 export default class GoalsColumn extends React.Component {
-  constructor(props) {
-    const GOAL_STATE = "state";
+  constructor() {
+    const GOAL_STATE = "goal_state";
     const localState = localStorage.getItem(GOAL_STATE);
     let goals = JSON.parse(localState);
-    super(props);
+    super();
     this.state = {
       goalsList: goals ? goals : [],
       value: ""
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.counterClick = this.counterClick.bind(this);
     this.archiveClick = this.archiveClick.bind(this);
     this.deliteGoal = this.deliteGoal.bind(this);
@@ -44,7 +44,7 @@ deliteGoal(id){
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
-  handleClick(event) {
+  handleSubmit(event) {
     event.preventDefault()
     let newGoal = {
       id: this.state.goalsList.length,
@@ -64,13 +64,13 @@ deliteGoal(id){
 
   componentDidUpdate() {
     console.log(this.state);
-    const GOAL_STATE = "state";
+    const GOAL_STATE = "goal_state";
     localStorage.setItem(GOAL_STATE, JSON.stringify(this.state.goalsList));
   }
   render() {
     return (
       <div className="goals-part">
-        <form className="form" onSubmit={this.handleClick}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <input
             id="goal-input"
             value={this.state.value}
@@ -83,7 +83,7 @@ deliteGoal(id){
             disabled={this.state.value.length ? "" : "disabled"} 
             type="submit"
           >
-            В список целей!
+            В список привычек!
           </button>
         </form>
         <div className="list">

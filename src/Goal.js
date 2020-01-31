@@ -1,15 +1,12 @@
 import React from "react";
 export default function Goal(props) {
-  let buttonNonestyle = {
-    display: "none"
+  let buttonArchivestyle = {
+    padding: "15px 20px"
   };
   let notComplitedStyle = {
     background: "#f3f3ef"
   };
   let archiveStyle = {
-    flexWrap: " wrap-reverse",
-    flexDirection: "row-reverse",
-    display: "flex",
     background: "#e4e4e4",
     boxShadow: "inset -11px -9px 0px 1px #b7b4b4",
     borderColor: "#b7b4b4"
@@ -37,16 +34,22 @@ export default function Goal(props) {
       <p className="goal-counter">Сделано {props.count} раз</p>
       <div className="buttons-goals">
         <button
-          style={props.inArchive ? buttonNonestyle : null}
           onClick={props.actionCount}
           disabled={props.inArchive ? "disabled" : ""}
         >
           Сделано
         </button>
-        <button onClick={props.actionArchive}>
+        <button
+          style={props.inArchive ? buttonArchivestyle : null}
+          onClick={props.actionArchive}
+        >
           {props.inArchive ? "Из архива" : "В архив"}
         </button>
-        <button onClick={props.actionDelite}>DELITE</button>
+        <div className="delite-button" onClick={props.actionDelite}>
+          <span aria-label="Close" role="img">
+            ❌
+          </span>
+        </div>
       </div>
     </div>
   );
