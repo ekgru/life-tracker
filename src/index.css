@@ -36,7 +36,8 @@ code {
   justify-content: center;
 }
 
-.case,.goal {
+.case,
+.goal {
   position: relative;
   box-shadow: inset -11px -9px 0px 1px #ffb44b;
   width: min-content;
@@ -51,24 +52,23 @@ code {
   color: #ffb44a;
   padding: 10px 20px 20px 10px;
 }
-.case{
+.case {
   min-width: 200px;
-    flex-direction: row;
-    justify-content: flex-start;
-
+  flex-direction: row;
+  justify-content: flex-start;
 }
-.case>p{
+.case > p {
   font-size: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-input[type="checkbox"]::before{
-background-color: #fe7150;
-width: 20px;
-height: 20px;
+input[type="checkbox"]::before {
+  background-color: #fe7150;
+  width: 20px;
+  height: 20px;
 }
 a {
   text-decoration: none;
@@ -180,7 +180,7 @@ input[type="text"] {
   transition: color 0.3s, background 0.5s;
   min-width: 150px;
 }
-.form>button {
+.form > button {
   margin: 10px 0px;
 }
 .goal-date {
@@ -199,49 +199,49 @@ input[type="text"] {
     background-position: 50px 0;
   }
 }
-.check-box{
+.check-box {
   width: 20px;
-    height: 20px;
-    border: 2px solid;
-    align-items: center;
-    display: flex;
+  height: 20px;
+  border: 2px solid;
+  align-items: center;
+  display: flex;
 }
-.check-box>p{margin-top: 0px;
-margin-bottom: 0px;
-font-size: 30px;
-padding-bottom: 0px;}
-div{
+.check-box > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 30px;
+  padding-bottom: 0px;
+}
+div {
   cursor: default;
 }
 
-
-.delite-button{
+.delite-button {
   position: absolute;
   right: 15px;
   left: auto;
   top: 4px;
 }
-.delite-button:hover{
+.delite-button:hover {
   color: #ff5535;
 }
-.main-page-container{
+.main-page-container {
   background: #fff;
   width: 90%;
   margin: auto;
   border: #ffb44a 4px solid;
   color: #ffb44a;
   padding: 20px;
- text-align: center;
+  text-align: center;
 }
-.img-container{
-
+.img-container {
   margin: 10px auto;
-border: #ffb44a 4px solid;
+  border: #ffb44a 4px solid;
   width: 300px;
   height: 300px;
   box-shadow: inset -11px -9px 0px 1px #ffb44b;
 }
-.img-container > img{
+.img-container > img {
   width: 100%;
   height: 100%;
   object-fit: cover;

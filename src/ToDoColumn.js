@@ -39,10 +39,9 @@ export default class ToDoColumn extends React.Component {
       return { toDos: stateObj };
     });
   }
-  deliteCase(index){
+  deliteCase(index) {
     let stateObj = [...this.state.toDos];
-    stateObj.splice(index,1)
-    // stateObj.map((item, index)=>item.id=index)
+    stateObj.splice(index, 1);
     this.setState(() => {
       return { toDos: stateObj };
     });
@@ -71,7 +70,7 @@ export default class ToDoColumn extends React.Component {
               key={index}
               completed={item.completed}
               action={() => this.completeClick(index)}
-              deliteAction={()=>this.deliteCase(index)}
+              deliteAction={() => this.deliteCase(index)}
             />
           ))}
         </div>

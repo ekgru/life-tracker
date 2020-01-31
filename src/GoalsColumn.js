@@ -1,4 +1,3 @@
-
 import React from "react";
 import Goal from "./Goal";
 
@@ -18,14 +17,14 @@ export default class GoalsColumn extends React.Component {
     this.archiveClick = this.archiveClick.bind(this);
     this.deliteGoal = this.deliteGoal.bind(this);
   }
-deliteGoal(id){
-  let stateObj = [...this.state.goalsList];
-  stateObj.splice(id,1)
-  stateObj.map((item, index)=>item.id=index)
-  this.setState(() => {
-    return { goalsList: stateObj };
-  });
-}
+  deliteGoal(id) {
+    let stateObj = [...this.state.goalsList];
+    stateObj.splice(id, 1);
+    stateObj.map((item, index) => (item.id = index));
+    this.setState(() => {
+      return { goalsList: stateObj };
+    });
+  }
   counterClick(id) {
     let stateObj = [...this.state.goalsList];
     stateObj[id].count += 1;
@@ -45,7 +44,7 @@ deliteGoal(id){
     this.setState({ value: event.target.value });
   }
   handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
     let newGoal = {
       id: this.state.goalsList.length,
       nameOfGoal: this.state.value,
@@ -59,11 +58,9 @@ deliteGoal(id){
         value: ""
       };
     });
-    console.log(this.state);
   }
 
   componentDidUpdate() {
-    console.log(this.state);
     const GOAL_STATE = "goal_state";
     localStorage.setItem(GOAL_STATE, JSON.stringify(this.state.goalsList));
   }
@@ -79,8 +76,7 @@ deliteGoal(id){
           />
           <button
             id="do-goal-button"
-            
-            disabled={this.state.value.length ? "" : "disabled"} 
+            disabled={this.state.value.length ? "" : "disabled"}
             type="submit"
           >
             В список привычек!
@@ -97,7 +93,7 @@ deliteGoal(id){
               count={item.count}
               actionCount={() => this.counterClick(item.id)}
               actionArchive={() => this.archiveClick(item.id)}
-              actionDelite={()=>this.deliteGoal(item.id)}
+              actionDelite={() => this.deliteGoal(item.id)}
             />
           ))}
         </div>
