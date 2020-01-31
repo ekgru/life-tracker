@@ -1,13 +1,212 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 body {
+  background-image: url(img/alchemy.gif);
+  background-repeat: repeat;
+  background-attachment: fixed;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.goals-part {
+  margin: 0 auto;
+  width: 90%;
+  padding: 20px;
+}
+.cases-part {
+  margin: 0 auto;
+  width: 90%;
+  padding: 20px;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.case,.goal {
+  box-shadow: inset -11px -9px 0px 1px #ffb44b;
+  width: min-content;
+  overflow: hidden;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid;
+  /* border-bottom-width: 4px; */
+  font-family: "Montserrat", sans-serif;
+  color: #ffb44a;
+  padding: 20px;
+}
+.case{
+  min-width: 200px;
+  display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+.case>p{
+  font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input[type="checkbox"]::before{
+background-color: #fe7150;
+width: 20px;
+height: 20px;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  margin: 0px 20px;
+  padding: 18px 30px;
+  overflow: hidden;
+  border: 2px solid;
+  /* border-bottom-width: 4px; */
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffb44a;
+  background: rgba(255, 255, 255, 1);
+  transition: color 0.3s, background 0.5s;
+  min-width: 80px;
+}
+a:active {
+  animation: stripes 0.75s infinite linear;
+  background: linear-gradient(
+    45deg,
+    #ffb44a62 25%,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(255, 255, 255, 1) 50%,
+    #ffb44a62 50%,
+    #ffb44a62 75%,
+    rgba(255, 255, 255, 1) 75%,
+    rgba(255, 255, 255, 1)
+  );
+  background-size: 10px 10px;
+  color: #ffb44a;
+}
+a:focus {
+  padding-bottom: 16px;
+  border-bottom-width: 4px;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  background: #f3f3ef;
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  border: 1px solid;
+  border-bottom-width: 4px;
+  font-family: "Montserrat", sans-serif;
+  color: #ffb44a;
+}
+.container {
+  padding-top: 55px;
+}
+button {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  margin: 10px 20px;
+  padding: 15px 30px;
+  overflow: hidden;
+  border: 2px solid;
+  /* border-bottom-width: 4px; */
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffb44a;
+  background: rgba(255, 255, 255, 1);
+  transition: color 0.3s, background 0.5s;
+  min-width: 150px;
+}
+button:hover {
+  animation: stripes 0.75s infinite linear;
+  background: linear-gradient(
+    45deg,
+    #ffb44a62 25%,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(255, 255, 255, 1) 50%,
+    #ffb44a62 50%,
+    #ffb44a62 75%,
+    rgba(255, 255, 255, 1) 75%,
+    rgba(255, 255, 255, 1)
+  );
+  background-size: 10px 10px;
+  color: #ffb44a;
+}
+button:disabled {
+  background: #e4e4e4;
+}
+button:active {
+  color: rgba(255, 255, 255, 1);
+  background: #ffb44a;
+}
+input[type="text"] {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  margin: 10px 0px;
+  padding: 15px 30px;
+  overflow: hidden;
+  border: 2px solid;
+  border-right: 0px;
+  /* border-bottom-width: 4px; */
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffb44a;
+  background: rgba(255, 255, 255, 1);
+  transition: color 0.3s, background 0.5s;
+  min-width: 150px;
+}
+.form>button {
+  margin: 10px 0px;
+}
+.goal-date {
+  color: #fe7150;
+  font-size: 10px;
+}
+.goal-counter {
+  color: #fe7150;
+  font-size: 12px;
+}
+@keyframes stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 0;
+  }
+}
+.check-box{
+  width: 20px;
+    height: 20px;
+    border: 2px solid;
+    align-items: center;
+    display: flex;
+}
+.check-box>p{margin-top: 0px;
+margin-bottom: 0px;
+font-size: 30px;
+padding-bottom: 0px;}
